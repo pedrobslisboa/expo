@@ -1,6 +1,6 @@
-<manifest package="host.exp.expoview"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  package="host.exp.expoview">
 
   <!-- WHEN_VERSIONING_REMOVE_FROM_HERE -->
   <supports-screens
@@ -106,9 +106,9 @@
     </provider>
 
     <meta-data
-      tools:replace="android:value"
       android:name="org.unimodules.core.AppLoader#react-native-headless"
-      android:value="host.exp.exponent.taskManager.ExpoHeadlessAppLoader" />
+      android:value="host.exp.exponent.taskManager.ExpoHeadlessAppLoader"
+      tools:replace="android:value" />
 
     <receiver
       android:name="host.exp.exponent.notifications.ExpoNotificationsService"
@@ -127,4 +127,16 @@
     </receiver>
   </application>
 
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="content" />
+    </intent>
+    <intent>
+      <action android:name="android.support.customtabs.action.CustomTabsService" />
+    </intent>
+  </queries>
 </manifest>

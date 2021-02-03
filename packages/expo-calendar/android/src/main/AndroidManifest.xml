@@ -1,2 +1,10 @@
-<manifest package="expo.modules.calendar">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="expo.modules.calendar">
+
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="content" />
+    </intent>
+  </queries>
 </manifest>
